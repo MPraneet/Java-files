@@ -1,8 +1,62 @@
-//Library Management System.    Book should have information: Book name, Book Author, Issued to, Issued on, Users should be able to add books,return issued books, issue books.    Assume that all users are registered with their names in the central database.
+//1. <h5>Word Counter</h5>.
+package project_files;
+import java.util.Scanner;
+public class word_counter {                                  
+   public static void main(String[] args) {
+      //Word counter from a given or entered sentence.
+      Scanner sc =new Scanner(System.in);
+      System.out.println("Type your Paragraph: ");
+      String userInput = sc.nextLine();
+      sc.close();
+      userInput = userInput.trim();
+      int count =0;
+      if(userInput.length()==0) count=0;
+      else{
+          //count the first word. Trimming removes leading spaces before first word.
+           count++;
+           for(int i=0;i<userInput.length();i++){
+                 if(userInput.charAt(i)==' ‘&& userInput.charAt(i+1)!=' ')
+                      count++;  
+           }
+     }
+     System.out.println("Word count: "+count);
+  }
+}
+
+//<h5>2. Time Adder Calculator.</h5>
+package project_files;
+import java.util.Scanner;
+public class time_adder {
+    public static void main(String[] args) {
+       Scanner sc = new Scanner(System.in);
+       System.out.println("Enter current hour: ");
+       int currentHour =sc.nextInt();
+       System.out.println("Enter current minute: ");
+       int currentMinute = sc.nextInt();
+       System.out.println("Enter current second: ");
+       int currentSecond = sc.nextInt();
+       System.out.println("Enter hour to go forward hour: ");
+       int nextHour =sc.nextInt();
+       System.out.println("Enter minute to go forward: ");
+       int nextMinute = sc.nextInt();
+       System.out.println("Enter second to go forward: ");
+       int nextSecond = sc.nextInt();
+       int answerHour =0, answerMinute=0, answerSecond=0;
+       int carrySecond=0, carryMinute=0;
+       boolean isNextDay =false;
+       answerSecond = currentSecond + nextSecond;        
+       if(answerSecond>=60){  answerSecond-=60;
+           carrySecond=1;}
+       answerMinute = currentMinute + nextMinute + carrySecond;
+       if(answerMinute>=60){  answerMinute-=60;
+           carryMinute=1;  }
+     }
+}
+
+//<h5>3. Library Management System.</h5> Book should have information: Book name, Book Author, Issued to, Issued on, Users should be able to add books,return issued books, issue books.    Assume that all users are registered with their names in the central database.
+
 package com.company;
-
 import java.util.ArrayList;
-
 class Book{
      public String name,author;
 
@@ -10,7 +64,6 @@ class Book{
         this.author = author;
         this.name = name;
     }
-
     @Override
     public String toString() {
         return "Book{" +
@@ -55,3 +108,4 @@ public class library_mgmt {
         System.out.println(l.books); //book deleted from Arraylist.
     }
 }
+
