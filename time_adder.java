@@ -11,7 +11,7 @@ public class time_adder {
         int currentMinute = sc.nextInt();
         System.out.println("Enter current second: ");
         int currentSecond = sc.nextInt();
-        System.out.println("Enter hour to go forward hour: ");
+        System.out.println("Enter hour togo forward hour: ");
         int nextHour =sc.nextInt();
         System.out.println("Enter minute to go forward: ");
         int nextMinute = sc.nextInt();
@@ -37,11 +37,11 @@ public class time_adder {
         }
         if(isNextDay){
             System.out.println("The Answer is: "+answerHour+" : "+answerMinute+
-            " : "+answerSecond + " on the next day");
+            " : "+answerSecond + "on the next day");
         }
         else{
             System.out.println("The Answer is: "+answerHour+" : "+answerMinute+
-                    " : "+answerSecond + "  on the same day");
+                    " : "+answerSecond + "on the same day");
         }
     }
 }
